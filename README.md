@@ -1,2 +1,4 @@
 # Podkit. A WordPress plugin for [Pods](https://github.com/pods-framework/pods) aficionados
-Podkit is a WordPress plugin aimed at developers who work with Pods.  It doesn't provide any settings in WordPress.  It simply makes extra functions and shortcodes available - all aimed at helping you build (Even More) Amazing Things with Pods.
+Podkit is a WordPress plugin aimed at developers who work with [Pods](https://github.com/pods-framework/pods).  Podkit doesn't provide any settings in WordPress.  It simply makes extra functions and shortcodes available - all aimed at helping you build (Even More) Amazing Things with Pods.  You can make use of everything Podkit provides without adding any extra code to your Plugin or Theme - it's all designed to be useful inside posts, widgets, and [Pods templates](http://pods.io/docs/build/template-tags-in-pods-templates/).
+
+This enables me to build bespoke features on projects where it's not practical to write custom plugins or themes.  That can include multisite contexts, or ninja-like low-budget projects.
