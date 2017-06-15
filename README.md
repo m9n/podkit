@@ -19,4 +19,4 @@ Assuming the `_location` field contains a full address and postal code, this wil
 
 The syntax for the first attribute is `opt="[pod name],[start date field],[end date field]"`
 
-The format attribute needs to include month date and year, using PHP's `date()` codes.  The shortcode pays attention to the order you put the three codes in.  Currently they need to be space seperated.  In future, using forward-slashes or full-stops(periods) as seperators will allow you to format dates like this: 15.06.2017.
+The format attribute needs to include month, date, and year, using PHP's `date()` codes.  The shortcode pays attention to the order you put the three codes in.  Currently they need to be space seperated.  In future, using forward-slashes or full-stops(periods) as seperators will allow you to format dates like this: 15.06.2017.
