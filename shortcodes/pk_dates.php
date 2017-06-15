@@ -3,7 +3,7 @@
 function pk_dates_shortcode( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'opt'    => '',
-        'format' => 'Y,m,j',
+        'format' => 'j M Y',
         'id'     => get_the_ID(),
         'sep'    => ' '
     ), $atts );
@@ -17,17 +17,18 @@ function pk_dates_shortcode( $atts, $content = null ) {
     // prepare pods options
  	$opt = explode(',', $a['opt']);
  	if ( empty($opt[0]) || empty($opt[1])) return 'Shortcode error: you might have made a mistake with your <code>opt</code> synatax.  It should look like this example: <code>opt="[pod],[start field],[end field]"</code>. End field is optional.';
- 	$pod = trim($opt[0]);
+ 	$opt = array_filter(array_map('trim', $opt));
+ 	$pod = $opt[0];
  	$start_field = $opt[1];
  	if (!empty($opt[2])) {
- 		$end_field = trim($opt[2]);
+ 		$end_field = $opt[2];
  	}
 
  	// prepare date formats
  	$month_codes = array('F','m','M','n');
     $day_codes   = array('d','D','j');
     $year_codes  = array('Y','y');
- 	$formats = explode(',', $a['format']);
+ 	$formats = explode(' ', $a['format']);
  	$formats = array_filter(array_map('trim', $formats));
  	if ( in_array($formats[0], $day_codes) && in_array($formats[1], $month_codes) && in_array($formats[2], $year_codes) ) {
  		$order = 'DMY';
