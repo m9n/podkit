@@ -1,18 +1,17 @@
 <?php
 
 function pk_dates_shortcode( $atts, $content = null ) {
+	if (!is_pods_active()) return 'Shortcode error: the Pods plugin needs to be installed and active to use this shortcode.';
 	$a = shortcode_atts( array(
 		'opt'    => '',
         'format' => 'j M Y',
-        'id'     => get_the_ID(),
-        'sep'    => ' '
+        'id'     => get_the_ID()
     ), $atts );
     $output = $end_day = '';
 
     if (empty($a['opt'])) return 'Shortcode error: pk_dates shortcode needs an <code>opt</code> parameter. Eg. <code>opt="[pod],[start field],[end field]"</code>. End field is optional.';
 
     $id  = $a['id'];
-    $sep = $a['sep'];
     
     // prepare pods options
  	$opt = explode(',', $a['opt']);
